@@ -1,0 +1,76 @@
+Task directory created at: /A
+Task data file created at: /A/readings.csv
+/A/readings.csv
+Task directory destroyed at: /A
+/A
+Task directory created at: /AB
+Task data file created at: /AB/readings.csv
+/AB/readings.csv
+Task directory destroyed at: /AB
+/AB
+Task directory created at: /ABC
+Task data file created at: /ABC/readings.csv
+/ABC/readings.csv
+Task directory destroyed at: /ABC
+/ABC
+Task directory created at: /ABCD
+Task data file created at: /ABCD/readings.csv
+/ABCD/readings.csv
+Task directory destroyed at: /ABCD
+/ABCD
+Task directory created at: /ABCDE
+Task data file created at: /ABCDE/readings.csv
+/ABCDE/readings.csv
+Task directory destroyed at: /ABCDE
+/ABCDE
+Task directory created at: /ABCDEF
+Task data file created at: /ABCDEF/readings.csv
+/ABCDEF/readings.csv
+Task directory destroyed at: /ABCDEF
+/ABCDEF
+Task directory created at: /ABCDEFG
+Task data file created at: /ABCDEFG/readings.csv
+/ABCDEFG/readings.csv
+Task directory destroyed at: /ABCDEFG
+/ABCDEFG
+Task directory created at: /ABCDEFGH
+Task data file created at: /ABCDEFGH/readings.csv
+/ABCDEFGH/readings.csv
+Task directory maintained at: /ABCDEFGH
+/ABCDEFGH
+Task directory created at: /ABCDEFGH/I
+Task data file created at: /ABCDEFGH/I/readings.csv
+/ABCDEFGH/I/readings.csv
+Task directory destroyed at: /ABCDEFGH/I
+/ABCDEFGH/I
+Task directory created at: /ABCDEFGH/IJ
+Task data file created at: /ABCDEFGH/IJ/readings.csv
+/ABCDEFGH/IJ/readings.csv
+Task directory destroyed at: /ABCDEFGH/IJ
+/ABCDEFGH/IJ
+Task directory created at: /ABCDEFGH/IJK
+Task data file created at: /ABCDEFGH/IJK/readings.csv
+/ABCDEFGH/IJK/readings.csv
+Task directory destroyed at: /ABCDEFGH/IJK
+/ABCDEFGH/IJK
+Task directory created at: /ABCDEFGH/IJKL
+Task data file created at: /ABCDEFGH/IJKL/readings.csv
+/ABCDEFGH/IJKL/readings.csv
+Task directory destroyed at: /ABCDEFGH/IJKL
+/ABCDEFGH/IJKL
+Task directory created at: /ABCDEFGH/IJKLM
+Task data file created at: /ABCDEFGH/IJKLM/readings.csv
+/ABCDEFGH/IJKLM/readings.csv
+Task directory destroyed at: /ABCDEFGH/IJKLM
+/ABCDEFGH/IJKLM
+Task directory created at: /ABCDEFGH/IJKLMN
+Task data file created at: /ABCDEFGH/IJKLMN/readings.csv
+/ABCDEFGH/IJKLMN/readings.csv
+Task directory destroyed at: /ABCDEFGH/IJKLMN
+/ABCDEFGH/IJKLMN
+Task directory created at: /ABCDEFGH/IJKLMNO
+Task data file created at: /ABCDEFGH/IJKLMNO/readings.csv
+/ABCDEFGH/IJKLMNO/readings.csv
+Task directory destroyed at: /ABCDEFGH/IJKLMNO
+/ABCDEFGH/IJKLMNO
+Task created!

@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="400.0" minWidth="600.0" prefHeight="500.0" prefWidth="800.0" scaleShape="false" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ArduinoSampler.interfaccia.IndexController">
+   <center>
+      <GridPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="374.0" minWidth="600.0" prefHeight="374.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="583.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="16.0" minWidth="10.0" prefWidth="16.0" />
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="233.0" minWidth="10.0" prefWidth="221.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="80.0" minHeight="10.0" prefHeight="78.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="23.0" minHeight="10.0" prefHeight="16.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" prefHeight="222.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="23.0" minHeight="10.0" prefHeight="23.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="100.0" minHeight="10.0" prefHeight="93.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <GridPane maxWidth="-Infinity" minHeight="40.0" minWidth="-Infinity" prefHeight="92.0" prefWidth="575.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="195.0" minWidth="10.0" prefWidth="179.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="311.0" minWidth="10.0" prefWidth="235.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="206.0" minWidth="10.0" prefWidth="159.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <ComboBox fx:id="databaseSelector" prefWidth="200.0" promptText="Nessun database disponibile" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <ComboBox fx:id="interfaceSelector" prefWidth="200.0" promptText="Nessun server disponibile" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <Label text="Seleziona database:" translateX="10.0" GridPane.rowIndex="1" />
+                  <Label text="Seleziona server:" translateX="10.0" GridPane.rowIndex="2" />
+                  <Button fx:id="addNewServerButton" mnemonicParsing="false" onAction="#openServerCommunicationInterface" text="Aggiungi Server" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+               </children>
+            </GridPane>
+            <GridPane GridPane.rowIndex="4">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="457.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="40.0" minWidth="10.0" prefWidth="11.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="32.0" minHeight="10.0" prefHeight="24.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="75.0" minHeight="10.0" prefHeight="54.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label prefHeight="17.0" prefWidth="181.0" text="Console log:" translateX="10.0" />
+                  <TextArea fx:id="consoleArea" editable="false" prefHeight="57.0" prefWidth="458.0" translateX="10.0" translateY="-4.0" GridPane.rowIndex="1" />
+               </children>
+            </GridPane>
+            <GridPane GridPane.rowIndex="2">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints />
+                <RowConstraints maxHeight="86.0" minHeight="10.0" prefHeight="49.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" prefHeight="200.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <LineChart fx:id="chart" animated="false" horizontalZeroLineVisible="false" prefHeight="199.0" prefWidth="576.0" translateX="2.0" verticalZeroLineVisible="false" GridPane.rowIndex="2">
+                    <xAxis>
+                      <CategoryAxis fx:id="time_axis" label="Tempo [ms]" nodeOrientation="LEFT_TO_RIGHT" prefHeight="46.0" prefWidth="504.0" tickLength="3.0" />
+                    </xAxis>
+                    <yAxis>
+                      <NumberAxis fx:id="value_axis" prefHeight="114.0" prefWidth="42.0" side="LEFT" />
+                    </yAxis>
+                  </LineChart>
+                  <GridPane GridPane.rowIndex="1">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="222.0" minWidth="10.0" prefWidth="198.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="272.0" minWidth="10.0" prefWidth="255.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Button fx:id="samplingSettings" mnemonicParsing="false" onAction="#openSamplingSettingsInterface" text="Impostazioni campionamento" translateX="10.0" />
+                        <GridPane GridPane.columnIndex="1">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="218.0" minWidth="10.0" prefWidth="192.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="171.0" minWidth="0.0" prefWidth="47.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="171.0" minWidth="7.0" prefWidth="7.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Label prefHeight="21.0" prefWidth="195.0" text="Numero cambionamenti al secondo:" />
+                              <TextField fx:id="samplingIndicator" editable="false" prefHeight="25.0" prefWidth="92.0" GridPane.columnIndex="1" />
+                           </children>
+                        </GridPane>
+                     </children>
+                  </GridPane>
+               </children>
+            </GridPane>
+            <GridPane alignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="4">
+              <columnConstraints>
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="173.0" minWidth="10.0" prefWidth="103.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="173.0" minWidth="10.0" prefWidth="92.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="173.0" minWidth="1.0" prefWidth="23.0" />
+              </columnConstraints>
+              <rowConstraints>
+                  <RowConstraints maxHeight="15.0" minHeight="6.0" prefHeight="6.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="34.0" minHeight="10.0" prefHeight="34.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="39.0" minHeight="10.0" prefHeight="39.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="19.0" minHeight="8.0" prefHeight="8.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Button fx:id="startButton" alignment="CENTER" disable="true" mnemonicParsing="false" onAction="#start" prefWidth="60.0" text="Avvia" GridPane.rowIndex="1" />
+                  <Button fx:id="stopButton" alignment="CENTER" disable="true" mnemonicParsing="false" onAction="#stop" prefWidth="60.0" text="Arresta" GridPane.rowIndex="2" />
+                  <Label text="Tempo trascorso" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                  <TextField fx:id="timePassedIndicator" alignment="CENTER" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+               </children>
+            </GridPane>
+            <Button fx:id="databaseManagerButton" mnemonicParsing="false" onAction="#openDatabaseManagerInterface" text="Gestione database" GridPane.columnIndex="2" />
+            <Separator orientation="VERTICAL" prefHeight="400.0" translateX="6.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Separator orientation="VERTICAL" prefHeight="400.0" translateX="6.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <Separator orientation="VERTICAL" prefHeight="400.0" translateX="6.0" GridPane.columnIndex="1" GridPane.rowSpan="5" />
+            <GridPane alignment="CENTER" minHeight="200.0" minWidth="130.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="230.0" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                  <RowConstraints />
+                  <RowConstraints maxHeight="25.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="25.0" minHeight="10.0" prefHeight="25.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="25.0" minHeight="0.0" prefHeight="25.0" vgrow="SOMETIMES" />
+                  <RowConstraints fillHeight="false" maxHeight="25.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints fillHeight="false" maxHeight="25.0" minHeight="10.0" prefHeight="25.0" vgrow="SOMETIMES" />
+                  <RowConstraints fillHeight="false" maxHeight="25.0" minHeight="10.0" prefHeight="25.0" vgrow="SOMETIMES" />
+                  <RowConstraints fillHeight="false" maxHeight="25.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints fillHeight="false" maxHeight="25.0" minHeight="0.0" prefHeight="25.0" vgrow="SOMETIMES" />
+                  <RowConstraints fillHeight="false" maxHeight="25.0" minHeight="10.0" prefHeight="25.0" vgrow="SOMETIMES" />
+                  <RowConstraints fillHeight="false" maxHeight="25.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints fillHeight="false" maxHeight="25.0" minHeight="10.0" prefHeight="25.0" vgrow="SOMETIMES" />
+                  <RowConstraints fillHeight="false" maxHeight="25.0" minHeight="10.0" prefHeight="31.0" vgrow="SOMETIMES" />
+                  <RowConstraints fillHeight="false" maxHeight="25.0" minHeight="10.0" prefHeight="31.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label text="Temperatura [°C]:" GridPane.rowIndex="2">
+                     <GridPane.margin>
+                        <Insets left="40.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <TextField fx:id="temperatureIndicator" editable="false" maxWidth="120.0" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+                     <GridPane.margin>
+                        <Insets right="10.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <Label text="Media temperatura [°C]:" GridPane.rowIndex="8">
+                     <GridPane.margin>
+                        <Insets left="40.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <TextField fx:id="averageTemperatureIndicator" editable="false" maxWidth="120.0" GridPane.halignment="CENTER" GridPane.rowIndex="9" GridPane.valignment="CENTER">
+                     <GridPane.margin>
+                        <Insets right="10.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <Label text="Umidità [RH%]:" GridPane.rowIndex="5">
+                     <GridPane.margin>
+                        <Insets left="40.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <TextField fx:id="humidityIndicator" editable="false" maxWidth="120.0" GridPane.rowIndex="6">
+                     <GridPane.margin>
+                        <Insets left="40.0" right="10.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <Label text="Media umidità [RH%]:" GridPane.rowIndex="11">
+                     <GridPane.margin>
+                        <Insets left="40.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <TextField fx:id="averageHumidityIndicator" editable="false" maxWidth="120.0" GridPane.rowIndex="12">
+                     <GridPane.margin>
+                        <Insets left="40.0" right="10.0" />
+                     </GridPane.margin>
+                  </TextField>
+               </children>
+            </GridPane>
+            <Separator prefWidth="202.0" GridPane.columnSpan="3" GridPane.rowIndex="1" />
+            <Separator prefWidth="202.0" GridPane.columnSpan="3" GridPane.rowIndex="3" />
+         </children>
+      </GridPane>
+   </center>
+</BorderPane>

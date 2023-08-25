@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ArduinoSampler.interfaccia.RDBMSController">
+   <center>
+      <GridPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="375.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="352.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" prefHeight="344.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <GridPane GridPane.rowIndex="1">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="250.0" minWidth="190.0" prefWidth="250.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <TableView fx:id="driverTableView" prefHeight="200.0" prefWidth="200.0">
+                    <columns>
+                      <TableColumn fx:id="driverNameColumn" editable="false" prefWidth="100.0" text="Nome" />
+                      <TableColumn fx:id="driverJDBCURLColumn" editable="false" prefWidth="244.0" text="Indirizzo" />
+                    </columns>
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" />
+                     </GridPane.margin>
+                  </TableView>
+                  <GridPane GridPane.columnIndex="1">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints maxHeight="170.0" minHeight="10.0" prefHeight="114.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="235.0" minHeight="10.0" prefHeight="231.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <GridPane>
+                          <columnConstraints>
+                            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints maxHeight="60.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints maxHeight="60.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Button fx:id="add_RDBMS_btn" mnemonicParsing="false" onAction="#openDriverAdderInterface" prefHeight="27.0" prefWidth="185.0" text="Aggiungi sistema di gestione">
+                                 <padding>
+                                    <Insets bottom="5.0" top="5.0" />
+                                 </padding>
+                              </Button>
+                              <Button fx:id="removeDriverButton" disable="true" mnemonicParsing="false" onAction="#removeDriver" prefHeight="27.0" prefWidth="185.0" text="Rimuovi sistema di gestione" GridPane.rowIndex="1">
+                                 <padding>
+                                    <Insets bottom="5.0" top="5.0" />
+                                 </padding>
+                              </Button>
+                           </children>
+                        </GridPane>
+                        <GridPane GridPane.rowIndex="1">
+                          <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="250.0" minWidth="10.0" prefWidth="130.0" />
+                              <ColumnConstraints />
+                              <ColumnConstraints />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints maxHeight="72.0" minHeight="10.0" prefHeight="16.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="138.0" minHeight="10.0" prefHeight="68.0" vgrow="SOMETIMES" />
+                            <RowConstraints maxHeight="138.0" minHeight="10.0" prefHeight="67.0" vgrow="SOMETIMES" />
+                            <RowConstraints maxHeight="168.0" minHeight="10.0" prefHeight="81.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Separator prefWidth="200.0" GridPane.columnSpan="3" />
+                              <TextField fx:id="databaseNameField" disable="true" GridPane.columnSpan="3" GridPane.rowIndex="2">
+                                 <GridPane.margin>
+                                    <Insets left="25.0" right="25.0" />
+                                 </GridPane.margin>
+                              </TextField>
+                              <GridPane GridPane.rowIndex="3">
+                                <columnConstraints>
+                                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints maxHeight="58.0" minHeight="10.0" prefHeight="23.0" vgrow="SOMETIMES" />
+                                  <RowConstraints maxHeight="45.0" minHeight="10.0" prefHeight="28.0" vgrow="SOMETIMES" />
+                                  <RowConstraints maxHeight="31.0" minHeight="10.0" prefHeight="31.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <Button fx:id="nextButton" disable="true" mnemonicParsing="false" onAction="#next" prefWidth="100.0" text="Fatto" GridPane.valignment="BOTTOM" />
+                                    <Button fx:id="go_back_btn" mnemonicParsing="false" onAction="#goBack" prefWidth="100.0" text="Torna Indietro" GridPane.rowIndex="1" GridPane.valignment="TOP">
+                                       <GridPane.margin>
+                                          <Insets top="15.0" />
+                                       </GridPane.margin>
+                                    </Button>
+                                 </children>
+                              </GridPane>
+                              <Label fx:id="databaseLabel" disable="true" text="Inserisci il nome del database da realizzare:" GridPane.columnSpan="3" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
+                                 <GridPane.margin>
+                                    <Insets left="5.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <Label fx:id="error_label" alignment="CENTER" contentDisplay="CENTER" text="Nome del database invalido!" textAlignment="CENTER" textFill="RED" visible="false" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                                 <GridPane.margin>
+                                    <Insets bottom="25.0" />
+                                 </GridPane.margin>
+                                 <font>
+                                    <Font name="System Bold Italic" size="13.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </GridPane>
+                     </children>
+                  </GridPane>
+               </children>
+            </GridPane>
+            <Label contentDisplay="CENTER" text="Seleziona prima un sistema di gestione database tra quelli disponibili:">
+               <GridPane.margin>
+                  <Insets right="5.0" />
+               </GridPane.margin>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </Label>
+         </children>
+      </GridPane>
+   </center>
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+         <menus>
+            <Menu mnemonicParsing="false" text="File">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Close" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Edit">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Delete" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Help">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="About" />
+               </items>
+            </Menu>
+         </menus>
+      </MenuBar>
+   </top>
+</BorderPane>
